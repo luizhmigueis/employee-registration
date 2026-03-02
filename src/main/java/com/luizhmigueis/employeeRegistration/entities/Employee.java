@@ -1,13 +1,11 @@
 package com.luizhmigueis.employeeRegistration.entities;
 
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 import lombok.*;
-import org.springframework.boot.autoconfigure.web.format.DateTimeFormatters;
 
-import java.text.SimpleDateFormat;
 import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
 
 @Entity
 @AllArgsConstructor
@@ -17,7 +15,7 @@ import java.time.format.DateTimeFormatter;
 @Table
 @Builder
 
-public class employee {
+public class Employee {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -32,7 +30,12 @@ public class employee {
 
     private LocalDate birthDate;
 
-    
+    @ManyToOne
+    @JoinColumn(name = "department_id")
+    @JsonBackReference
+    private Department department;
+
+
 
 
 
