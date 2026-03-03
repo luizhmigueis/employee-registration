@@ -1,7 +1,7 @@
 package com.luizhmigueis.employeeRegistration.entities;
 
 import com.fasterxml.jackson.annotation.JsonManagedReference;
-import com.luizhmigueis.employeeRegistration.enums.DepartmentEnum;
+import com.luizhmigueis.employeeRegistration.enums.DepartmentNameEnum;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -20,7 +20,7 @@ public class Department {
     private Long id;
 
     @Enumerated(EnumType.STRING)
-    private DepartmentEnum name;
+    private DepartmentNameEnum name;
 
     @OneToMany
     @JsonManagedReference

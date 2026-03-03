@@ -1,6 +1,6 @@
 package com.luizhmigueis.employeeRegistration.enums;
 
-public enum DepartmentEnum {
+public enum DepartmentNameEnum {
     SALES,
     SERVICES,
     FINANCE,
