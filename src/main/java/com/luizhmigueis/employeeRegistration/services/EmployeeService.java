@@ -39,6 +39,9 @@ public class EmployeeService {
                 () -> new RuntimeException("ID not found")
         );
     }
+    public List<Employee> findAllEmployees() {
+        return employeeRepository.findAll();
+    }
     public void updateEmployeeByDriversLicenseNumber(String driversLicenseNumber, Employee employee){
         Employee employeeEntity = employeeRepository.findByDriversLicenseNumber(driversLicenseNumber).orElseThrow(() -> new RuntimeException("Drivers License Number not found"));
         Employee employeeUpdated = Employee.builder()
@@ -52,7 +55,4 @@ public class EmployeeService {
         employeeRepository.saveAndFlush(employeeUpdated);
 
     }
-
-
-
 }
