@@ -22,7 +22,8 @@ public class Department {
     @Enumerated(EnumType.STRING)
     private DepartmentNameEnum name;
 
-    @OneToMany
+
     @JsonManagedReference
+    @OneToMany(mappedBy = "department")
     private List<Employee> employeeList;
 }
